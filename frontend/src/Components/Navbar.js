@@ -10,7 +10,6 @@ const StyledMenu = styled.nav`
   background: #596275;
   height: 100%;
   text-align: right;
-  padding: 1.6rem;
   padding-top : 50px;
   position: absolute;
   top: 0;
@@ -21,14 +20,16 @@ const StyledMenu = styled.nav`
   a {
     font-size: 1.5rem;
     padding: 1.5rem 0;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
     transition: color 0.3s linear;
 
     &:hover {
-        opacity: 0.7;
-        transition: opacity 0.3s ease-in-out;
+        text-shadow: 0px 0px 3px #FFFFFF;    
+        transition: all 0.5s ease-out;
     }
 
     @media (max-width: 576px) {
@@ -39,11 +40,11 @@ const StyledMenu = styled.nav`
 
   @media (max-width: 576px) {
     padding-top : 1%;
-    height : 70px;
-    width : 91%;
+    height : 98px;
+    width : 100%;
     text-align: center;
     transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};
-
+    opacity: 0.8;
     i {
         display : none;
     }
