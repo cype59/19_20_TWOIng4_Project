@@ -1,0 +1,28 @@
+.titre
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.7em;
+    color:white;
+    margin-left:4%;
+    margin-top:1%;
+}
+
+.groupeButton
+{
+    margin-top:2%;
+
+}
+
+
+button.btn.btn-secondary
+{
+    border-radius: 45%;
+    padding-right:10%;
+    padding-left:10%;
+    background-color:rgba(255, 255, 255, 0.164);
+    font-size: 0.9em;
+    border:rgba(255, 255, 255, 0.164);
+    
+   
+}
+
