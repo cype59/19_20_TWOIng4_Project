@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar'
-import Widget from './widget'
+import WidgetBase from './Widgets/WidgetBase'
 import Header from './Components/Header'
 import { Container, Row, Col } from 'reactstrap';
 
@@ -10,8 +10,8 @@ function App() {
     <div className="App">
         <Navbar></Navbar>
         <Header/>  
-        <Widget></Widget>
-        <Widget></Widget>    
+        <WidgetBase></WidgetBase>
+        <WidgetBase></WidgetBase>    
     </div>
   );
 }

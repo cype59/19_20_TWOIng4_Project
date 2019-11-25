@@ -30,6 +30,8 @@ const StyledMenu = styled.nav`
     &:hover {
         text-shadow: 0px 0px 3px #FFFFFF;    
         transition: all 0.5s ease-out;
+        text-decoration: none;
+        color: white;
     }
 
     @media (max-width: 576px) {
