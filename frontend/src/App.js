@@ -1,15 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navbar'
+import Widget from './widget'
 import Header from './Components/Header'
 import { Container, Row, Col } from 'reactstrap';
 
 function App() {
   return (
     <div className="App">
-    
-      <Header/>
-  
+        <Navbar></Navbar>
+        <Header/>  
+        <Widget></Widget>
+        <Widget></Widget>    
     </div>
   );
 }

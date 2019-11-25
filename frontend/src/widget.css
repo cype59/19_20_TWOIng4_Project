@@ -1,0 +1,11 @@
+.widget {
+    opacity: 0.5;
+    color: white;
+    background-color: black !important;
+    margin-left: 30px;
+    margin-top: 100px;
+}
+
+.widget hr {
+    background-color: white;
+}
