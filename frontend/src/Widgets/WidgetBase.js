@@ -4,19 +4,26 @@ import {
     CardTitle, CardText
 } from 'reactstrap';
 
+import MyLineChart from './LineChart';
+import MyPieChart from './PieChart';
+
 import './widget.css';
 
+const components = {
+    piechart: MyPieChart,
+    linechart: MyLineChart,
+};
 
 class WidgetBase extends React.Component {
     render() {
+        const SpecificStory = components[this.props.chartType];
         return (
             <div>
                 <Card className= "widget">
-                    <h3>Header</h3>
+                    <h3>{this.props.nomWidget}</h3>
                     <hr></hr>
                     <CardBody>
-                        <CardTitle>Special Title Treatment</CardTitle>
-                        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                        <SpecificStory/>
                     </CardBody>
                 </Card>
             </div>
@@ -25,3 +32,4 @@ class WidgetBase extends React.Component {
 }
 
 export default WidgetBase;
+

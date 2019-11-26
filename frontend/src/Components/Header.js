@@ -9,17 +9,15 @@ class Header extends Component {
         return (
           <div>
             <Row>
-                <Col sm={{ size: 'auto'}} className="titre">Music Dashboard</Col>    
+                <Col sm={{ size: 'auto'}} className="titre">ECE DASHBOARD</Col>    
             </Row>
 
             <Row>
-                <Col sm={{ size: 'auto', offset: 1 }}  xs={{ size: 'auto', offset: 1 }} className="groupeButton">
-                    <ButtonGroup>
-                        <Button>Today</Button>
-                        <Button>Month</Button>
-                        <Button>Year</Button>
-                    </ButtonGroup>
-                </Col>
+                <ButtonGroup>
+                    <Button>Today</Button>
+                    <Button>Month</Button>
+                    <Button>Year</Button>
+            </ButtonGroup>
             </Row>
            </div>
         );
