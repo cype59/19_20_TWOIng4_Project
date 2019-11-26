@@ -5,6 +5,8 @@ import {
 } from 'reactstrap';
 
 import './widget.css';
+import Exemple from '../Charts/Exemple';
+
 
 
 class WidgetBase extends React.Component {
@@ -12,11 +14,10 @@ class WidgetBase extends React.Component {
         return (
             <div>
                 <Card className= "widget">
-                    <h3>Header</h3>
+                    <h3>{this.props.nomWidget}</h3>
                     <hr></hr>
                     <CardBody>
-                        <CardTitle>Special Title Treatment</CardTitle>
-                        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                        <Exemple></Exemple>
                     </CardBody>
                 </Card>
             </div>

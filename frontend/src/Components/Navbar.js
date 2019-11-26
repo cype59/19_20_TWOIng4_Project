@@ -7,15 +7,17 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-60%)'};
-  background: #596275;
+  background: #1a1a1a;
   height: 100%;
   text-align: right;
   padding-top : 50px;
   position: absolute;
+  float: left;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
   word-spacing: 1.5rem;
+  z-index: 2;
 
   a {
     font-size: 1.5rem;
@@ -45,7 +47,7 @@ const StyledMenu = styled.nav`
     height : 98px;
     width : 100%;
     text-align: center;
-    transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};
+    transform: ${({ open }) => open ? 'translateY(0px)' : 'translateY(-100%)'};
     opacity: 0.8;
     i {
         display : none;
