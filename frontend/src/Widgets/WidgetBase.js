@@ -23,7 +23,7 @@ class WidgetBase extends React.Component {
                     <h3>{this.props.nomWidget}</h3>
                     <hr></hr>
                     <CardBody>
-                        <SpecificStory/>;
+                        <SpecificStory/>
                     </CardBody>
                 </Card>
             </div>
