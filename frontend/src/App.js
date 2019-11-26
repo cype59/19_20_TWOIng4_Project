@@ -15,9 +15,8 @@ function App() {
           <Col><Header /></Col>
         </Row>
         <Row>
-          <Col lg="4"><WidgetBase nomWidget="Widget1"></WidgetBase></Col>
-          <Col lg="4"><WidgetBase nomWidget="Widget2"></WidgetBase></Col>
-          <Col lg="4"><WidgetBase nomWidget="Widget3"></WidgetBase></Col>
+          <Col lg="4" sm="6"><WidgetBase nomWidget="MyPieChart" chartType= "piechart"></WidgetBase></Col>
+          <Col lg="4" sm="6"><WidgetBase nomWidget="MyLineChart" chartType= "linechart"></WidgetBase></Col>
         </Row>
 
       </div>
