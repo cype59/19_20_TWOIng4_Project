@@ -6,12 +6,16 @@ import {
 
 import MyLineChart from './LineChart';
 import MyPieChart from './PieChart';
+import MySpiderChart from './SpiderChart';
+import MyBarChart from './BarChart';
 
 import './widget.css';
 
 const components = {
     piechart: MyPieChart,
     linechart: MyLineChart,
+    spiderchart: MySpiderChart,
+    barchart: MyBarChart
 };
 
 class WidgetBase extends React.Component {
