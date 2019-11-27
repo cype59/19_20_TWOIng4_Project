@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     Card, CardBody,
-    CardTitle, CardText
 } from 'reactstrap';
 
 import MyLineChart from './LineChart';

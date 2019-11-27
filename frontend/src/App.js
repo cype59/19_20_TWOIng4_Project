@@ -4,7 +4,7 @@ import Navbar from './Components/Navbar'
 import WidgetBase from './Widgets/WidgetBase'
 import Header from './Components/Header'
 
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 function App() {
   return (
