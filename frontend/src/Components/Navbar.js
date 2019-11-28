@@ -8,7 +8,7 @@ const StyledMenu = styled.nav`
   flex-direction: column;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-60%)'};
   background: #1a1a1a;
-  height: 100%;
+  min-height: 100%;
   text-align: right;
   padding-top : 50px;
   position: absolute;
@@ -59,8 +59,8 @@ const StyledMenu = styled.nav`
 const Menu = ({ open }) => {
     return (
         <StyledMenu open={open}>
-            <a href="/">Accueil <i class="fas fa-home"></i></a>
-            <a href="/">Admin <i class="fas fa-cog"></i></a>
+            <a href="/">Accueil <i className="fas fa-home"></i></a>
+            <a href="/">Admin <i className="fas fa-cog"></i></a>
         </StyledMenu>
     )
 }

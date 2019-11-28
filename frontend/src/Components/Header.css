@@ -7,14 +7,13 @@
 }
 
 #logo {
-    width: 10em;
+    width: 30%;
+    margin-left: 35%;    
     margin-bottom: 20px;
 }
 
-.groupeButton
-{
-    margin-top:2%;
-
+.btn-group {
+    margin-left: 2%;
 }
 
 

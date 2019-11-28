@@ -8,19 +8,19 @@ import logo from '../iotlogo.png'
 class Header extends Component {
     render() {
         return (
-          <div>
-            <Row>
-                <Col sm={{ size: 'auto'}} className="titre"><img src={logo} alt= 'logo' id="logo"></img></Col>    
-            </Row>
+            <div>
+                <Row>
+                    <img src={logo} alt='logo' id="logo"></img>
+                </Row>
 
-            <Row>
-                <ButtonGroup>
-                    <Button>Today</Button>
-                    <Button>Month</Button>
-                    <Button>Year</Button>
-            </ButtonGroup>
-            </Row>
-           </div>
+                <Row>
+                    <ButtonGroup>
+                        <Button>Today</Button>
+                        <Button>Month</Button>
+                        <Button>Year</Button>
+                    </ButtonGroup>                    
+                </Row>
+            </div>
         );
     }
 }

@@ -48,8 +48,8 @@ export default class MyLineChart extends PureComponent {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="pv" stroke="#0088FE" strokeWidth={2} activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="uv" stroke="#FFBB28" strokeWidth={2} />
           </LineChart>
         </ResponsiveContainer>
       </div>
