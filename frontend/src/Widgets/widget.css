@@ -8,3 +8,15 @@
 .widget hr {
     background-color: #e7e7e7;
 }
+
+.jvectormap-legend {
+    text-align: left;
+}
+
+.jvectormap-legend .jvectormap-legend-tick-sample {
+    height: 28px;
+}
+
+.jvectormap-legend-icons {
+    color: black;
+}

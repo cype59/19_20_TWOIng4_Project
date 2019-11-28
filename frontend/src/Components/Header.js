@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 import { Button, ButtonGroup } from 'reactstrap';
 import "./Header.css";
+import logo from '../iotlogo.png'
 
 
 class Header extends Component {
@@ -9,7 +10,7 @@ class Header extends Component {
         return (
           <div>
             <Row>
-                <Col sm={{ size: 'auto'}} className="titre">ECE DASHBOARD</Col>    
+                <Col sm={{ size: 'auto'}} className="titre"><img src={logo} alt= 'logo' id="logo"></img></Col>    
             </Row>
 
             <Row>

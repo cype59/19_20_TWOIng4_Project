@@ -38,22 +38,21 @@ const MapChart = () => {
           hover: {
             "fill-opacity": 0.8,
             cursor: "pointer"
-          },
-          selected: {
-            fill: "#2938bc" //color for the clicked country
-          },
-          selectedHover: {}
+          }, 
         }}
-        regionsSelectable={true}
         series={{
           regions: [
             {
               values: mapData, //this is your data
-              scale: ["#146804", "#ff0000"], //your color game's here
-              normalizeFunction: "polynomial"
+              scale: ["#3BA200", "#BB1036"], //your color game's here
+              normalizeFunction: "polynomial",
+              legend: {
+                    vertical: true
+                 }
             }
           ]
         }}
+        
       />
     </div>
   );
