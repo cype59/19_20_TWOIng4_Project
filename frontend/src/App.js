@@ -16,8 +16,8 @@ function App() {
           <Col><Header /></Col>
         </Row>
         <Row>
-          <Col><WidgetChiffre nombre="80" couleur = '#0088FE' intitule="Capteurs"></WidgetChiffre></Col>
-          <Col><WidgetChiffre nombre="80" couleur = '#00C49F' intitule="Utilisateurs"></WidgetChiffre></Col>
+          <Col><WidgetChiffre nombre="8000" couleur = '#0088FE' intitule="Capteurs"></WidgetChiffre></Col>
+          <Col><WidgetChiffre nombre="352" couleur = '#00C49F' intitule="Utilisateurs"></WidgetChiffre></Col>
           <Col><WidgetChiffre nombre="80" couleur = '#FFBB28' intitule="Capteurs"></WidgetChiffre></Col>
           <Col><WidgetChiffre nombre="80" couleur = '#FF8042' intitule="Capteurs"></WidgetChiffre></Col>
         </Row>
