@@ -7,6 +7,7 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-60%)'};
+  opacity: ${({open}) => open ? '0.8': '1'};
   background: #1a1a1a;
   height: 100%;
   text-align: right;
@@ -15,7 +16,7 @@ const StyledMenu = styled.nav`
   float: left;
   top: 0;
   left: 0;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   word-spacing: 1.5rem;
   z-index: 2;
 
@@ -105,7 +106,10 @@ const StyledBurger = styled.button`
     :nth-child(3) {
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
-  }
+
+    @media (max-width: 576px) {
+      background: ${({ open }) => open ? 'white' : '#1a1a1a'};
+    }
 `
 
 const Burger = ({ open, setOpen }) => {
