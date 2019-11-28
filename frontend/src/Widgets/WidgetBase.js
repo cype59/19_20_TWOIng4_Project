@@ -5,12 +5,15 @@ import {
 
 import MyLineChart from './LineChart';
 import MyPieChart from './PieChart';
+import MapChart from './MapChart'
+
 
 import './widget.css';
 
 const components = {
     piechart: MyPieChart,
     linechart: MyLineChart,
+    mapchart: MapChart,
 };
 
 class WidgetBase extends React.Component {
