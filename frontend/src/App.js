@@ -5,6 +5,7 @@ import WidgetBase from './Widgets/WidgetBase'
 import Header from './Components/Header'
 
 import { Container, Row, Col } from 'reactstrap';
+import AdminPage from './Components/AdminPage';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
         </Row>
 
       </div>
-
+      <Container>
+      <AdminPage/></Container>
     </div>
   );
 }
