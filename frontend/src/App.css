@@ -1,7 +1,8 @@
 .App {
   background-color: rgba(212, 212, 212, 0.308);
   /*background-color: #303952;*/
-
+  height: 100%;
+  overflow: hidden;
 }
 
 .grilleWidget {
@@ -10,3 +11,10 @@
   width: 85%;
 }
 
+@media only screen and (max-width: 576px) {
+  .grilleWidget {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+}
