@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'reactstrap';
+import { Row } from 'reactstrap';
 import { Button, ButtonGroup } from 'reactstrap';
 import "./Header.css";
 import logo from '../iotlogo2.png'

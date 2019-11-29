@@ -11,13 +11,17 @@ const mapData = {
   US: 20
 };
 
-const handleClick = (e, countryCode) => {
+/**
+ const handleClick = (e, countryCode) => {
   console.log(countryCode);
 };
 
 const handleShow = (e, countryCode, mapData) => {
   console.log(countryCode);
-}
+};
+*/
+
+
 
 const MapChart = () => {
   return (
