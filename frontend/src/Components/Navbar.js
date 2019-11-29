@@ -7,15 +7,16 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-60%)'};
+  opacity: ${({open}) => open ? '0.8': '1'};
   background: #1a1a1a;
-  height: 100%;
+  height: 200vh;
   text-align: right;
   padding-top : 50px;
   position: absolute;
   float: left;
   top: 0;
   left: 0;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   word-spacing: 1.5rem;
   z-index: 2;
 
@@ -44,11 +45,11 @@ const StyledMenu = styled.nav`
 
   @media (max-width: 576px) {
     padding-top : 1%;
-    height : 98px;
+    height : 110px;
     width : 100%;
     text-align: center;
     transform: ${({ open }) => open ? 'translateY(0px)' : 'translateY(-100%)'};
-    opacity: 0.8;
+    opacity: 0.9;
     i {
         display : none;
     }
@@ -59,8 +60,8 @@ const StyledMenu = styled.nav`
 const Menu = ({ open }) => {
     return (
         <StyledMenu open={open}>
-            <a href="/">Accueil <i class="fas fa-home"></i></a>
-            <a href="/">Admin <i class="fas fa-cog"></i></a>
+            <a href="/">Accueil <i className="fas fa-home"></i></a>
+            <a href="/">Admin <i className="fas fa-cog"></i></a>
         </StyledMenu>
     )
 }
@@ -105,7 +106,10 @@ const StyledBurger = styled.button`
     :nth-child(3) {
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
-  }
+
+    @media (max-width: 576px) {
+      background: ${({ open }) => open ? 'white' : '#1a1a1a'};
+    }
 `
 
 const Burger = ({ open, setOpen }) => {

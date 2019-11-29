@@ -1,13 +1,13 @@
 import React from 'react';
 import {
     Card, CardBody,
-    CardTitle, CardText
 } from 'reactstrap';
 
 import MyLineChart from './LineChart';
 import MyPieChart from './PieChart';
 import MySpiderChart from './SpiderChart';
 import MyBarChart from './BarChart';
+import MapChart from './MapChart'
 
 import './widget.css';
 
@@ -15,7 +15,8 @@ const components = {
     piechart: MyPieChart,
     linechart: MyLineChart,
     spiderchart: MySpiderChart,
-    barchart: MyBarChart
+    barchart: MyBarChart,
+    mapchart: MapChart,
 };
 
 class WidgetBase extends React.Component {

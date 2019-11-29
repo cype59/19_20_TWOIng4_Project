@@ -6,10 +6,26 @@
     margin-top:1%;
 }
 
-.groupeButton
-{
-    margin-top:2%;
+#logo {
+    width: 30%;
+    margin-left: 35%;    
+    margin-bottom: 20px;
+    margin-top: 10px;
+    height: 100%;
 
+}
+
+@media only screen and (max-width: 576px) {
+    #logo {
+        width: 44%;
+        margin-left: 28%;
+        margin-top: 13px;
+    }
+}
+
+
+.btn-group {
+    margin-left: 2%;
 }
 
 

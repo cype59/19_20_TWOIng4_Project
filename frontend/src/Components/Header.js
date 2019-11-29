@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Row } from 'reactstrap';
 import { Button, ButtonGroup } from 'reactstrap';
 import "./Header.css";
+import logo from '../iotlogo2.png'
 
 
 class Header extends Component {
     render() {
         return (
-          <div>
-            <Row>
-                <Col sm={{ size: 'auto'}} className="titre">ECE DASHBOARD</Col>    
-            </Row>
+            <div>
+                <Row>
+                    <img src={logo} alt='logo' id="logo"></img>
+                </Row>
 
-            <Row>
-                <ButtonGroup>
-                    <Button>Today</Button>
-                    <Button>Month</Button>
-                    <Button>Year</Button>
-            </ButtonGroup>
-            </Row>
-           </div>
+                <Row>
+                    <ButtonGroup>
+                        <Button>Today</Button>
+                        <Button>Month</Button>
+                        <Button>Year</Button>
+                    </ButtonGroup>                    
+                </Row>
+            </div>
         );
     }
 }

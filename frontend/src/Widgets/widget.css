@@ -1,3 +1,5 @@
+/** Widget avec les diagrammes */
+
 .widget {
     color: #1a1a1a;
     text-align: center;
@@ -7,4 +9,25 @@
 
 .widget hr {
     background-color: #e7e7e7;
+}
+
+.jvectormap-legend {
+    text-align: left;
+}
+
+.jvectormap-legend .jvectormap-legend-tick-sample {
+    height: 28px;
+}
+
+.jvectormap-legend-icons {
+    color: black;
+}
+
+/** Widget avec les chiffres */
+
+.widgetChiffre {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
 }
