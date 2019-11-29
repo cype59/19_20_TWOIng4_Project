@@ -4,8 +4,10 @@ import Navbar from './Components/Navbar'
 import WidgetBase from './Widgets/WidgetBase'
 import Header from './Components/Header'
 import WidgetChiffre from './Widgets/WidgetChiffre'
+import AdminPage from './Components/AdminPage';
 
-import { Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
+
 
 function App() {
   return (
@@ -21,16 +23,19 @@ function App() {
           <Col><WidgetChiffre nombre="80" couleur = '#FFBB28' intitule="Capteurs"></WidgetChiffre></Col>
           <Col><WidgetChiffre nombre="80" couleur = '#FF8042' intitule="Capteurs"></WidgetChiffre></Col>
         </Row>
+        <Col lg="4" sm="12"><WidgetBase nomWidget="MyBarChart" chartType= "barchart"></WidgetBase></Col>
         <Row>
           <Col lg="4" sm="6"><WidgetBase nomWidget="MyPieChart" chartType= "piechart"></WidgetBase></Col>
           <Col lg="8" sm="6"><WidgetBase nomWidget="MyLineChart" chartType= "linechart"></WidgetBase></Col>
+          <Col lg="3" sm="4"><WidgetBase nomWidget="MySpiderChart" chartType= "spiderchart"></WidgetBase></Col>
         </Row>
         <WidgetBase nomWidget="MyMapChart" chartType= "mapchart"></WidgetBase>
       </div>
-
-
+      <Container>
+      <AdminPage/></Container>
     </div>
   );
 }
 
 export default App;
+

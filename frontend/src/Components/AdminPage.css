@@ -1,0 +1,15 @@
+.formulaire
+{
+    background-color: white;
+    border: 1px solid rgba(187, 186, 186, 0.575);
+    border-radius: 3px;
+    padding-left:10%;
+    padding-right:10%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.titreForm
+{
+    text-align:center;
+}
