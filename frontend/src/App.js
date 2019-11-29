@@ -23,13 +23,15 @@ function App() {
           <Col><WidgetChiffre nombre="80" couleur = '#FFBB28' intitule="Capteurs"></WidgetChiffre></Col>
           <Col><WidgetChiffre nombre="80" couleur = '#FF8042' intitule="Capteurs"></WidgetChiffre></Col>
         </Row>
-        <Col lg="4" sm="12"><WidgetBase nomWidget="MyBarChart" chartType= "barchart"></WidgetBase></Col>
         <Row>
-          <Col lg="4" sm="6"><WidgetBase nomWidget="MyPieChart" chartType= "piechart"></WidgetBase></Col>
-          <Col lg="8" sm="6"><WidgetBase nomWidget="MyLineChart" chartType= "linechart"></WidgetBase></Col>
-          <Col lg="3" sm="4"><WidgetBase nomWidget="MySpiderChart" chartType= "spiderchart"></WidgetBase></Col>
+          <Col lg="4" sm="6"><WidgetBase nomWidget="MyBarChart" chartType= "barchart"></WidgetBase></Col>
+          <Col lg="4" sm="6"><WidgetBase nomWidget="MySpiderChart" chartType= "spiderchart"></WidgetBase></Col>
+          <Col lg="4" sm="12"><WidgetBase nomWidget="MyLineChart" chartType= "linechart"></WidgetBase></Col>
         </Row>
-        <WidgetBase nomWidget="MyMapChart" chartType= "mapchart"></WidgetBase>
+        <Row>
+          <Col lg="4" sm="12"><WidgetBase nomWidget="MyPieChart" chartType= "piechart"></WidgetBase></Col>
+          <Col lg="8" sm="12"><WidgetBase nomWidget="MyMapChart" chartType= "mapchart"></WidgetBase></Col>
+        </Row>
       </div>
       <Container>
       <AdminPage/></Container>
