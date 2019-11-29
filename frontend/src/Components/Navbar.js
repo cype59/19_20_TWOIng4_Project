@@ -9,7 +9,7 @@ const StyledMenu = styled.nav`
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-60%)'};
   opacity: ${({open}) => open ? '0.8': '1'};
   background: #1a1a1a;
-  height: 100%;
+  height: 200vh;
   text-align: right;
   padding-top : 50px;
   position: absolute;
@@ -45,11 +45,11 @@ const StyledMenu = styled.nav`
 
   @media (max-width: 576px) {
     padding-top : 1%;
-    height : 98px;
+    height : 110px;
     width : 100%;
     text-align: center;
     transform: ${({ open }) => open ? 'translateY(0px)' : 'translateY(-100%)'};
-    opacity: 0.8;
+    opacity: 0.9;
     i {
         display : none;
     }
