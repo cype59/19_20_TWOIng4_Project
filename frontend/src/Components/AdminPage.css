@@ -1,3 +1,8 @@
+.pageAdmin
+{
+    background-color: rgba(212, 212, 212, 0.308);
+}
+
 .formulaire
 {
     background-color: white;
@@ -7,10 +12,32 @@
     padding-right:10%;
     margin-top: 4%;
     margin-bottom: 4%;
+    padding-bottom: 3%;
 }
 
 .titreForm
 {
     text-align:center;
     margin-top:3%;
+}
+
+#engrenages
+{
+    margin-top:15%;
+    border-radius: 50%;
+    border:1px solid rgb(49, 49, 49);
+    height:70%;
+    background-color: white;
+}
+
+.titreAdmin
+{
+    margin-top:2%;
+    font-family: 'Alatsi', sans-serif;
+
+}
+
+table 
+{
+    background-color: white;
 }
