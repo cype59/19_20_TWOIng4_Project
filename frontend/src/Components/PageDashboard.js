@@ -11,7 +11,6 @@ class PageDashboard extends Component {
     render() {
         return (
 
-
             <div className="App">
                
                 <div className="grilleWidget">
@@ -34,9 +33,7 @@ class PageDashboard extends Component {
                         <Col lg="8" sm="12"><WidgetBase nomWidget="MyMapChart" chartType="mapchart"></WidgetBase></Col>
                     </Row>
                 </div>
-                <Container>
-                    <AdminPage />
-                </Container>
+                
             </div>
 
         );
