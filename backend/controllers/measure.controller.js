@@ -1,0 +1,118 @@
+const Measure = require('../models/measure.model.js');
+
+// Create and Save a new User
+exports.create = (req, res) => {
+  // Create a new User
+  const measure = new Measure({
+    creationDate: req.body.creationDate,
+    sensorId: req.body.sensorId,
+    value: req.body.value,
+  });
+
+  // Save Measure in the database
+  measure
+    .save()
+    .then(data => {
+      // we wait for insertion to be complete and we send the newly user integrated
+      res.send(data);
+    })
+    .catch(err => {
+      // In case of error during insertion of a new user in database we send an
+      // appropriate message
+      res.status(500).send({
+        message: err.message || 'Some error occurred while creating the User.'
+      });
+    });
+};
+
+// Retrieve and return all Users from the database.
+exports.findAll = (req, res) => {
+  Measure.find()
+    .then(measures => {
+      res.send(measures);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};
+
+// Find a single Measure with a MeasureId
+exports.findOne = (req, res) => {
+  Measure.findById(req.params.measureId)
+    .then(measure => {
+      if (!measure) {
+        return res.status(404).send({
+          message: 'Measure not found with id ' + req.params.measureId
+        });
+      }
+      res.send(measure);
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId') {
+        return res.status(404).send({
+          message: 'Measure not found with id ' + req.params.measureId
+        });
+      }
+      return res.status(500).send({
+        message: 'Error retrieving user with id ' + req.params.measureId
+      });
+    });
+};
+
+// Update a Measure identified by the MeasureId in the request
+exports.update = (req, res) => {
+
+  // Find measure and update it with the request body
+  Measure.findByIdAndUpdate(
+    req.params.measureId,
+    {
+        creationDate: req.body.creationDate,
+        sensorId: req.body.sensorId,
+        value: req.body.value,
+    },
+    { new: true }
+  )
+    .then(measure => {
+      if (!measure) {
+        return res.status(404).send({
+          message: 'Measure not found with id ' + req.params.measureId
+        });
+      }
+      res.send(measure);
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId') {
+        return res.status(404).send({
+          message: 'Measure not found with id ' + req.params.measureId
+        });
+      }
+      return res.status(500).send({
+        message: 'Error updating measure with id ' + req.params.measureId
+      });
+    });
+};
+
+// Delete a Measure with the specified MeasureId in the request
+exports.delete = (req, res) => {
+  Measure.findByIdAndRemove(req.params.measureId)
+    .then(measure => {
+      if (!measure) {
+        return res.status(404).send({
+          message: 'Measure not found with id ' + req.params.measureId
+        });
+      }
+      res.send({ message: 'Measure deleted successfully!' });
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId' || err.name === 'NotFound') {
+        return res.status(404).send({
+          message: 'Measure not found with id ' + req.params.measureId
+        });
+      }
+      return res.status(500).send({
+        message: 'Could not delete measure with id ' + req.params.measureId
+      });
+    });
+};

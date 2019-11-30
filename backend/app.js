@@ -13,7 +13,10 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const userRouter = require('./routes/user');
 var measuresRouter = require("./routes/measures");
+const measureRouter = require('./routes/measure');
 var sensorsRouter = require("./routes/sensors");
+var sensorRouter = require("./routes/sensor");
+
 
 
 app.use(logger("dev"));
@@ -24,8 +27,10 @@ app.use(cookieParser());
 app.use("/", indexRouter);
 app.use('/user', userRouter);
 app.use("/users", usersRouter);
-//app.use("/measures", measuresRouter);
-//app.use("/sensors", sensorsRouter);
+app.use("/measure", measureRouter);
+app.use("/measures", measuresRouter);
+app.use("/sensor", sensorRouter);
+app.use("/sensors", sensorsRouter);
 
 
 module.exports = app;
