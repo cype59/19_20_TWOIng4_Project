@@ -1,6 +1,10 @@
 import React from 'react';
 import '../index.css';
 import styled from 'styled-components';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import AdminPage from './AdminPage';
+import App from '../App';
+import Routes from '../routes';
 
 
 const StyledMenu = styled.nav`
@@ -59,12 +63,17 @@ const StyledMenu = styled.nav`
 
 const Menu = ({ open }) => {
     return (
+       
         <StyledMenu open={open}>
-            <a href="/">Accueil <i className="fas fa-home"></i></a>
-            <a href="/">Admin <i className="fas fa-cog"></i></a>
+            <Link to="/">Accueil <i className="fas fa-home"></i></Link>
+            <Link to="/admin">Admin <i className="fas fa-cog"></i></Link>
         </StyledMenu>
-    )
+  
+    );
 }
+
+
+  
 
 const StyledBurger = styled.button`
   position: absolute;
@@ -123,7 +132,8 @@ const Burger = ({ open, setOpen }) => {
 }
 
 
-const Navbar = () => {
+const Navbar = () => 
+{
     const [open, setOpen] = React.useState(false);
     const node = React.useRef();
     return (
