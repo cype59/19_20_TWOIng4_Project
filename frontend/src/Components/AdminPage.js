@@ -94,10 +94,9 @@ class AdminPage extends Component {
                     <FormGroup>
                       <Label for="exampleCheckbox">Taille de la maison</Label>
                       <div>
-                        <CustomInput type="radio" id="exampleCustomRadio" name="customRadio" label="Petite" />
-                        <CustomInput type="radio" id="exampleCustomRadio2" name="customRadio" label="Moyenne" />
-                        <CustomInput type="radio" id="exampleCustomRadio2" name="customRadio" label="Grande" />
-
+                        <CustomInput type="radio" id="petite" name="customRadio" label="Petite" />
+                        <CustomInput type="radio" id="moyenne" name="customRadio" label="Moyenne" />
+                        <CustomInput type="radio" id="grande" name="customRadio" label="Grande" />
                       </div>
                     </FormGroup>
                   </Col>
