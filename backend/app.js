@@ -6,16 +6,18 @@ const mongoose = require('mongoose');
 const config = require('./config/database.config');
 
 // on se connecte à la base de données
-mongoose.connect(config.url, { useNewUrlParser: true });
+mongoose.connect(config.url, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 const app = express();
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+const userRouter = require('./routes/user');
 var measuresRouter = require("./routes/measures");
+const measureRouter = require('./routes/measure');
 var sensorsRouter = require("./routes/sensors");
+var sensorRouter = require("./routes/sensor");
 
 
-var app = express();
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -23,8 +25,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/", indexRouter);
+app.use('/user', userRouter);
 app.use("/users", usersRouter);
+app.use("/measure", measureRouter);
 app.use("/measures", measuresRouter);
+app.use("/sensor", sensorRouter);
 app.use("/sensors", sensorsRouter);
 
 
