@@ -96,7 +96,7 @@ class AdminPage extends Component {
                       <div>
                         <CustomInput type="radio" id="exampleCustomRadio" name="customRadio" label="Petite" />
                         <CustomInput type="radio" id="exampleCustomRadio2" name="customRadio" label="Moyenne" />
-                        <CustomInput type="radio" id="exampleCustomRadio2" name="customRadio" label="Grande" check />
+                        <CustomInput type="radio" id="exampleCustomRadio2" name="customRadio" label="Grande" />
 
                       </div>
                     </FormGroup>
