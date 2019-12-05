@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component} from 'react';
 import { CustomInput, Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 import "./AdminPage.css";
 import settings from '../settings.svg'
@@ -7,6 +7,8 @@ import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Modal, ModalHeader, ModalBody, ModalFooter
 } from 'reactstrap';
+import axios from 'axios';
+import ModalBtn from './ModalBtn';
 
 class AdminPage extends Component {
 
@@ -44,67 +46,18 @@ class AdminPage extends Component {
                         <td>Otto</td>
                         <td>data</td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>273907273912</td>
-                        <td>Thornton</td>
-                        <td>data</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>749278871827</td>
-                        <td>the Bird</td>
-                        <td>data</td>
-                      </tr>
+                     
                     </tbody>
                   </Table>
 
-                  <Button color="info">Ajouter un utilisateur</Button>
+              
+                  <ModalBtn/>
                   
                 </CardBody>
               </Card>
             </Col>
 
-
-
-            <Col>
-              <Form className="formulaire">
-                <h2 className="titreForm" >Ajout Utilisateur</h2>
-                <p className="titreForm">Entrez les informations de l'utilisateur à ajouter.</p>
-                <Row form>
-                  <Col>
-                    <FormGroup>
-                      <Label for="exampleCountry">Pays</Label>
-                      <Input type="country" name="country" id="exampleCountry" placeholder="France" />
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <FormGroup>
-                  <Label for="exampleNumber">Number</Label>
-                  <Input
-                    type="number"
-                    name="number"
-                    id="exampleNumber"
-                    placeholder="2 personnes"
-                  />
-                </FormGroup>
-
-                <Row form>
-                  <Col lg="6">
-                    <FormGroup>
-                      <Label for="exampleCheckbox">Taille de la maison</Label>
-                      <div>
-                        <CustomInput type="radio" id="petite" name="customRadio" label="Petite" />
-                        <CustomInput type="radio" id="moyenne" name="customRadio" label="Moyenne" />
-                        <CustomInput type="radio" id="grande" name="customRadio" label="Grande" />
-                      </div>
-                    </FormGroup>
-                  </Col>
-                </Row>
-
-                <Button outline color="secondary">Sign in</Button>
-              </Form>
-            </Col>
+        
           </Row>
         </Container>
       </div>
