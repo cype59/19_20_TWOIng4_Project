@@ -1,14 +1,13 @@
 import React, { Component} from 'react';
-import { CustomInput, Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
+import {Col, Row,Container } from 'reactstrap';
 import "./AdminPage.css";
 import settings from '../settings.svg'
 import { Table } from 'reactstrap';
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Modal, ModalHeader, ModalBody, ModalFooter
-} from 'reactstrap';
-import axios from 'axios';
+import {Card, CardBody,CardTitle} from 'reactstrap';
 import ModalBtn from './ModalBtn';
+
+import axios from 'axios';
+
 
 class AdminPage extends Component {
 
