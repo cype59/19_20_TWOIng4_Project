@@ -2,9 +2,7 @@ import React from 'react';
 import '../index.css';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import AdminPage from './AdminPage';
-import App from '../App';
-import Routes from '../routes';
+
 
 
 const StyledMenu = styled.nav`
