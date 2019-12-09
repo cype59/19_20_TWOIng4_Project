@@ -1,7 +1,7 @@
 import React from 'react';
 import '../index.css';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 
 

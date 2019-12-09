@@ -3,6 +3,7 @@
 import React, { Component, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Col, Row, Form, FormGroup, Label, Input } from 'reactstrap';
+import axios from 'axios';
 
 
 
@@ -18,9 +19,10 @@ class ModalBtn extends Component {
 
 
         this.state = {
+            id:'',
             valuePays: '',
             valueNbPers: '2',
-            valueTailleMaison:'petite',
+            valueTailleMaison:'small',
             
         };
 
@@ -78,7 +80,24 @@ class ModalBtn extends Component {
 
 
     handleSubmit(event) {
-        alert('Le Pays : ' + this.state.valuePays 
+        event.preventDefault();
+
+        axios.put('http://localhost:3000/user', {
+            
+            location:this.state.valuePays,
+            personsInHouse:this.state.valueNbPers,
+            houseSize:this.state.valueTailleMaison
+        })
+        .then(res => {
+          console.log("response "+res)  
+          console.log(res.data);
+        })
+        .catch(function (error) {
+            alert("Ajout UserSarah"+error);
+        })
+
+
+        alert('Pays : ' + this.state.valuePays 
         + '\nTaille maison : '+ this.state.valueTailleMaison
         + '\nNb de personnes : '+ this.state.valueNbPers);
         event.preventDefault();
@@ -127,9 +146,9 @@ class ModalBtn extends Component {
                                     <FormGroup>
                                         <Label for="exampleSelectMulti">Taille de la maison :</Label>
                                         <Input value={this.state.valueTailleMaison} onChange={this.handleChangeTailleMaison} type="select" >
-                                            <option value='petite'>Petite</option>
-                                            <option value='moyenne'>Moyenne</option>
-                                            <option value='grande'>Grande</option>
+                                            <option value='small'>Small</option>
+                                            <option value='medium'>Medium</option>
+                                            <option value='big'>Big</option>
                                             
                                         </Input>
                                     </FormGroup>
