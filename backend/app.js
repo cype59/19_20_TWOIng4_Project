@@ -4,11 +4,25 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const mongoose = require('mongoose');
 const config = require('./config/database.config');
+let cors = require('cors');
 
-// on se connecte à la base de données
+/*// on se connecte à la base de données
 mongoose.connect(config.url, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
-const app = express();
+*/
+mongoose.Promise = global.Promise;
+mongoose.connect(config.url, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }).then(() => {
+    console.log('Database connected sucessfully !')
+},
+    error => {
+        console.log('Database could not be connected : ' + error)
+    }
+)
 
+
+const app = express();
+//ajout sarah
+app.use(cors());
+//
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const userRouter = require('./routes/user');
