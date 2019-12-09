@@ -21,10 +21,11 @@ class AdminPage extends Component {
 componentDidMount() {
     axios.get('http://localhost:3000/users')
         .then(res => {
-            this.setState({ usersCollection: res.data });
+          console.log("response "+res)  
+          this.setState({ usersCollection: res.data });
         })
         .catch(function (error) {
-            console.log(error);
+            alert("Sarah"+error);
         })
 }
 
