@@ -36,11 +36,7 @@ dataTable() {
     });
 }
 
-
   render() {
-
-
-
     return (
       <div className="pageAdmin">
         <Row>

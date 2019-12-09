@@ -15,7 +15,11 @@ class PageDashboard extends Component {
         this.state = {
             usersCollection: [],
             sensorsCollection: [],
-            measuresCollection: []
+            measuresCollection: [],
+            usersCollectionSmall:[],
+            usersCollectionMedium:[],
+            usersCollectionBig:[]
+
         }
         
     }
@@ -45,6 +49,34 @@ class PageDashboard extends Component {
             .catch(function (error) {
                 alert(error);
             })
+
+    
+        axios.get('http://localhost:3000/users/small')
+        .then(res => {
+          console.log("response "+res)  
+          this.setState({ usersCollectionSmall: res.data });
+        })
+        .catch(function (error) {
+            alert("Sarah"+error);
+        })
+
+        axios.get('http://localhost:3000/users/medium')
+        .then(res => {
+          console.log("response "+res)  
+          this.setState({ usersCollectionMedium: res.data });
+        })
+        .catch(function (error) {
+            alert("Sarah"+error);
+        })
+
+        axios.get('http://localhost:3000/users/big')
+        .then(res => {
+          console.log("response "+res)  
+          this.setState({ usersCollectionBig: res.data });
+        })
+        .catch(function (error) {
+            alert("Sarah"+error);
+        })
     }
 
     render() {
@@ -63,12 +95,18 @@ class PageDashboard extends Component {
                         <Col><WidgetChiffre nombre="80" couleur='#FF8042' intitule="Capteurs"></WidgetChiffre></Col>
                     </Row>
                     <Row>
-                        <Col lg="4" sm="6"><WidgetBase nomWidget="MyBarChart" chartType="barchart"></WidgetBase></Col>
+                        <Col lg="4" sm="6"><WidgetBase  nomWidget="MyBarChart" chartType="barchart"></WidgetBase></Col>
                         <Col lg="4" sm="6"><WidgetBase nomWidget="MySpiderChart" chartType="spiderchart"></WidgetBase></Col>
                         <Col lg="4" sm="12"><WidgetBase nomWidget="MyLineChart" chartType="linechart"></WidgetBase></Col>
                     </Row>
                     <Row>
-                        <Col lg="4" sm="12"><WidgetBase nomWidget="MyPieChart" chartType="piechart" collection= {this.state.data}></WidgetBase></Col>
+                        <Col lg="4" sm="12"><WidgetBase 
+                            nombreSmall={this.state.usersCollectionSmall.length} 
+                            nombreMedium={this.state.usersCollectionMedium.length} 
+                            nombreBig={this.state.usersCollectionBig.length}  
+                            nomWidget="MyPieChart" 
+                            chartType="piechart" 
+                            collection= {this.state.data}></WidgetBase></Col>
                         <Col lg="8" sm="12"><WidgetBase nomWidget="MyMapChart" chartType="mapchart"></WidgetBase></Col>
                     </Row>
                 </div>

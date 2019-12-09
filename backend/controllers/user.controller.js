@@ -115,3 +115,51 @@ exports.delete = (req, res) => {
       });
     });
 };
+
+
+//Sarah ajout de code
+
+ /* User.find({
+    houseSize:{$eq:"small"}
+  })*/
+  exports.findHouseSmall = (req, res) => {
+    User.find({
+      houseSize:{$eq:"small"}
+    })
+      .then(users => {
+        res.send(users);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: err.message || 'Some error occurred while retrieving users.'
+        });
+      });
+  };
+
+  exports.findHouseMedium = (req, res) => {
+    User.find({
+      houseSize:{$eq:"medium"}
+    })
+      .then(users => {
+        res.send(users);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: err.message || 'Some error occurred while retrieving users.'
+        });
+      });
+  };
+
+  exports.findHouseBig = (req, res) => {
+    User.find({
+      houseSize:{$eq:"big"}
+    })
+      .then(users => {
+        res.send(users);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: err.message || 'Some error occurred while retrieving users.'
+        });
+      });
+  };
