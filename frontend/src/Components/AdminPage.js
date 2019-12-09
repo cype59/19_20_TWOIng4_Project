@@ -4,15 +4,15 @@ import "./AdminPage.css";
 import settings from '../settings.svg'
 import { Table } from 'reactstrap';
 import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Modal, ModalHeader, ModalBody, ModalFooter
+  Card, CardBody,
+  CardTitle,
 } from 'reactstrap';
 
 class AdminPage extends Component {
 
   render() {
 
-   
+
 
     return (
       <div className="pageAdmin">
@@ -60,7 +60,7 @@ class AdminPage extends Component {
                   </Table>
 
                   <Button color="info">Ajouter un utilisateur</Button>
-                  
+
                 </CardBody>
               </Card>
             </Col>
