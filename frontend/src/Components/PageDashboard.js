@@ -4,7 +4,7 @@ import WidgetBase from '../Widgets/WidgetBase';
 import Header from './Header';
 import WidgetChiffre from '../Widgets/WidgetChiffre';
 
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 class PageDashboard extends Component {
     render() {

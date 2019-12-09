@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import {Col, Row,Container } from 'reactstrap';
 import "./AdminPage.css";
 import { Table } from 'reactstrap';
+
 import {Card, CardBody,CardTitle} from 'reactstrap';
 import ModalBtn from './ModalBtn';
 import DataTable from './DataTable';
@@ -38,7 +39,7 @@ dataTable() {
 
   render() {
 
-   
+
 
     return (
       <div className="pageAdmin">
@@ -66,11 +67,8 @@ dataTable() {
                       {this.dataTable()}
                      
                     </tbody>
-                  </Table>
-
-              
-                  <ModalBtn/>
-                  
+                  </Table>              
+                  <ModalBtn/>                  
                 </CardBody>
               </Card>
             </Col>
