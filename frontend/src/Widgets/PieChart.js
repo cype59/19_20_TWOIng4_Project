@@ -1,14 +1,9 @@
 import React, { PureComponent } from 'react';
 import {
-  PieChart, Pie, ResponsiveContainer, Cell,
+  PieChart, Pie, ResponsiveContainer, Cell,Legend,
 } from 'recharts';
 
-const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
-];
+
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -30,7 +25,14 @@ const renderCustomizedLabel = ({
 
 export default class MyPieChart extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/c9pL8k61/';
+  
   render() {
+
+    const data = [
+      { name: 'Small houses', value: this.props.nombreSmall },
+      { name: 'Medium houses', value: this.props.nombreMedium },
+      { name: 'Big Houses', value: this.props.nombreBig },
+    ];
     return (
       <div style={{ width: '100%', height: 300 }}>
         <ResponsiveContainer>
@@ -47,6 +49,7 @@ export default class MyPieChart extends PureComponent {
                 data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
               }
             </Pie>
+<Legend/>
           </PieChart>
         </ResponsiveContainer>
       </div>

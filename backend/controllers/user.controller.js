@@ -115,3 +115,18 @@ exports.delete = (req, res) => {
       });
     });
 };
+
+
+//Sarah ajout de code
+
+exports.findHouseSize = (req, res) => {
+  User.find({ houseSize: req.params.houseSize })
+    .then(users => {
+      res.send(users);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};
