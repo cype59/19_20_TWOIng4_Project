@@ -1,0 +1,7 @@
+@media screen and (max-width: 640px) {
+    tr,
+    td {
+      display: block;
+      width: auto;
+    }
+  }
