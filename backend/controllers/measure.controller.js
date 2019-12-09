@@ -61,6 +61,52 @@ exports.findOne = (req, res) => {
     });
 };
 
+// Find a single Measure with a type
+exports.findType = (req, res) => {
+  Measure.find({type:req.params.type})
+    .then(measure => {
+      if (!measure) {
+        return res.status(404).send({
+          message: 'Measure not found with type ' + req.params.type
+        });
+      }
+      res.send(measure);
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId') {
+        return res.status(404).send({
+          message: 'Measure not found with type ' + req.params.type
+        });
+      }
+      return res.status(500).send({
+        message: 'Error retrieving user with type ' + req.params.type
+      });
+    });
+};
+
+// Find a single Measure with a type
+exports.findCreation = (req, res) => {
+  Measure.find({creationDate: { $gte: req.params.creationDate }})
+    .then(measure => {
+      if (!measure) {
+        return res.status(404).send({
+          message: 'Measure not found with type ' + req.params.creationDate
+        });
+      }
+      res.send(measure);
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId') {
+        return res.status(404).send({
+          message: 'Measure not found with type ' + req.params.creationDate
+        });
+      }
+      return res.status(500).send({
+        message: 'Error retrieving user with type ' + req.params.creationDate
+      });
+    });
+};
+
 // Update a Measure identified by the MeasureId in the request
 exports.update = (req, res) => {
 
