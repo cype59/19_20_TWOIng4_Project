@@ -1,14 +1,41 @@
-import React, { Component, useState } from 'react';
-import { CustomInput, Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
+import React, { Component} from 'react';
+import {Col, Row,Container } from 'reactstrap';
 import "./AdminPage.css";
-import settings from '../settings.svg'
 import { Table } from 'reactstrap';
-import {
-  Card, CardBody,
-  CardTitle,
-} from 'reactstrap';
+
+import {Card, CardBody,CardTitle} from 'reactstrap';
+import ModalBtn from './ModalBtn';
+import DataTable from './DataTable';
+
+import axios from 'axios';
+
 
 class AdminPage extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      usersCollection: []
+    }
+}
+
+componentDidMount() {
+    axios.get('http://localhost:3000/users')
+        .then(res => {
+          console.log("response "+res)  
+          this.setState({ usersCollection: res.data });
+        })
+        .catch(function (error) {
+            alert("Sarah"+error);
+        })
+}
+
+dataTable() {
+    return this.state.usersCollection.map((data, i) => {
+        return <DataTable obj={data} key={i} />;
+    });
+}
+
 
   render() {
 
@@ -17,8 +44,7 @@ class AdminPage extends Component {
     return (
       <div className="pageAdmin">
         <Row>
-          <Col lg="1" ></Col>
-          <Col lg="1" ><img src={settings} alt='engrenages' id="engrenages"></img></Col>
+          <Col></Col>
           <Col lg="10" className="titreAdmin"><h1>Admin</h1></Col>
         </Row>
 
@@ -31,80 +57,23 @@ class AdminPage extends Component {
                   <Table striped>
                     <thead>
                       <tr>
-                        <th>#</th>
-                        <th>Id utilisateur</th>
-                        <th>Hisajda</th>
-                        <th>Yioabdg</th>
+                        <th>Id users</th>
+                        <th>Location</th>
+                        <th>Nb people in house</th>
+                        <th>House size</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>268774821768</td>
-                        <td>Otto</td>
-                        <td>data</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>273907273912</td>
-                        <td>Thornton</td>
-                        <td>data</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>749278871827</td>
-                        <td>the Bird</td>
-                        <td>data</td>
-                      </tr>
+                      {this.dataTable()}
+                     
                     </tbody>
-                  </Table>
-
-                  <Button color="info">Ajouter un utilisateur</Button>
-
+                  </Table>              
+                  <ModalBtn/>                  
                 </CardBody>
               </Card>
             </Col>
 
-
-
-            <Col>
-              <Form className="formulaire">
-                <h2 className="titreForm" >Ajout Utilisateur</h2>
-                <p className="titreForm">Entrez les informations de l'utilisateur à ajouter.</p>
-                <Row form>
-                  <Col>
-                    <FormGroup>
-                      <Label for="exampleCountry">Pays</Label>
-                      <Input type="country" name="country" id="exampleCountry" placeholder="France" />
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <FormGroup>
-                  <Label for="exampleNumber">Number</Label>
-                  <Input
-                    type="number"
-                    name="number"
-                    id="exampleNumber"
-                    placeholder="2 personnes"
-                  />
-                </FormGroup>
-
-                <Row form>
-                  <Col lg="6">
-                    <FormGroup>
-                      <Label for="exampleCheckbox">Taille de la maison</Label>
-                      <div>
-                        <CustomInput type="radio" id="petite" name="customRadio" label="Petite" />
-                        <CustomInput type="radio" id="moyenne" name="customRadio" label="Moyenne" />
-                        <CustomInput type="radio" id="grande" name="customRadio" label="Grande" />
-                      </div>
-                    </FormGroup>
-                  </Col>
-                </Row>
-
-                <Button outline color="secondary">Sign in</Button>
-              </Form>
-            </Col>
+        
           </Row>
         </Container>
       </div>
