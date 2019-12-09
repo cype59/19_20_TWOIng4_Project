@@ -119,47 +119,14 @@ exports.delete = (req, res) => {
 
 //Sarah ajout de code
 
- /* User.find({
-    houseSize:{$eq:"small"}
-  })*/
-  exports.findHouseSmall = (req, res) => {
-    User.find({
-      houseSize:{$eq:"small"}
+exports.findHouseSize = (req, res) => {
+  User.find({ houseSize: req.params.houseSize })
+    .then(users => {
+      res.send(users);
     })
-      .then(users => {
-        res.send(users);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message: err.message || 'Some error occurred while retrieving users.'
-        });
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
       });
-  };
-
-  exports.findHouseMedium = (req, res) => {
-    User.find({
-      houseSize:{$eq:"medium"}
-    })
-      .then(users => {
-        res.send(users);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message: err.message || 'Some error occurred while retrieving users.'
-        });
-      });
-  };
-
-  exports.findHouseBig = (req, res) => {
-    User.find({
-      houseSize:{$eq:"big"}
-    })
-      .then(users => {
-        res.send(users);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message: err.message || 'Some error occurred while retrieving users.'
-        });
-      });
-  };
+    });
+};

@@ -19,7 +19,6 @@ class PageDashboard extends Component {
             usersCollectionSmall:[],
             usersCollectionMedium:[],
             usersCollectionBig:[]
-
         }
         
     }
@@ -51,7 +50,7 @@ class PageDashboard extends Component {
             })
 
     
-        axios.get('http://localhost:3000/users/small')
+        axios.get('http://localhost:3000/users/houseSize/small')
         .then(res => {
           console.log("response "+res)  
           this.setState({ usersCollectionSmall: res.data });
@@ -60,7 +59,7 @@ class PageDashboard extends Component {
             alert("Sarah"+error);
         })
 
-        axios.get('http://localhost:3000/users/medium')
+        axios.get('http://localhost:3000/users/houseSize/medium')
         .then(res => {
           console.log("response "+res)  
           this.setState({ usersCollectionMedium: res.data });
@@ -69,7 +68,7 @@ class PageDashboard extends Component {
             alert("Sarah"+error);
         })
 
-        axios.get('http://localhost:3000/users/big')
+        axios.get('http://localhost:3000/users/houseSize/big')
         .then(res => {
           console.log("response "+res)  
           this.setState({ usersCollectionBig: res.data });
