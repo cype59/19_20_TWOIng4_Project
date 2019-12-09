@@ -2,7 +2,7 @@
 
 import React, { Component, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { CustomInput, Col, Row, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Row, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 
@@ -83,8 +83,6 @@ class ModalBtn extends Component {
         + '\nNb de personnes : '+ this.state.valueNbPers);
         event.preventDefault();
     }
-
-
 
 
     render() {

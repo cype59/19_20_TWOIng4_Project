@@ -1,15 +1,39 @@
 import React, { Component} from 'react';
 import {Col, Row,Container } from 'reactstrap';
 import "./AdminPage.css";
-import settings from '../settings.svg'
 import { Table } from 'reactstrap';
 import {Card, CardBody,CardTitle} from 'reactstrap';
 import ModalBtn from './ModalBtn';
+import DataTable from './DataTable';
 
 import axios from 'axios';
 
 
 class AdminPage extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      usersCollection: []
+    }
+}
+
+componentDidMount() {
+    axios.get('http://localhost:3000/users')
+        .then(res => {
+            this.setState({ usersCollection: res.data });
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+}
+
+dataTable() {
+    return this.state.usersCollection.map((data, i) => {
+        return <DataTable obj={data} key={i} />;
+    });
+}
+
 
   render() {
 
@@ -18,8 +42,7 @@ class AdminPage extends Component {
     return (
       <div className="pageAdmin">
         <Row>
-          <Col lg="1" ></Col>
-          <Col lg="1" ><img src={settings} alt='engrenages' id="engrenages"></img></Col>
+          <Col></Col>
           <Col lg="10" className="titreAdmin"><h1>Admin</h1></Col>
         </Row>
 
@@ -32,19 +55,14 @@ class AdminPage extends Component {
                   <Table striped>
                     <thead>
                       <tr>
-                        <th>#</th>
-                        <th>Id utilisateur</th>
-                        <th>Hisajda</th>
-                        <th>Yioabdg</th>
+                        <th>Id users</th>
+                        <th>Location</th>
+                        <th>Nb people in house</th>
+                        <th>House size</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>268774821768</td>
-                        <td>Otto</td>
-                        <td>data</td>
-                      </tr>
+                      {this.dataTable()}
                      
                     </tbody>
                   </Table>
