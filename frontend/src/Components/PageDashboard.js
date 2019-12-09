@@ -103,7 +103,7 @@ class PageDashboard extends Component {
                             nombreSmall={this.state.usersCollectionSmall.length} 
                             nombreMedium={this.state.usersCollectionMedium.length} 
                             nombreBig={this.state.usersCollectionBig.length}  
-                            nomWidget="MyPieChart" 
+                            nomWidget="User's House Size" 
                             chartType="piechart" 
                             collection= {this.state.data}></WidgetBase></Col>
                         <Col lg="8" sm="12"><WidgetBase nomWidget="MyMapChart" chartType="mapchart"></WidgetBase></Col>
