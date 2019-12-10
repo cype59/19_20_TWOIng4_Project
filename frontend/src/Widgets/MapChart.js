@@ -21,8 +21,6 @@ const handleShow = (e, countryCode, mapData) => {
 };
 */
 
-
-
 const MapChart = () => {
   return (
     <div>

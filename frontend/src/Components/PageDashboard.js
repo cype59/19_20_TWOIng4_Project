@@ -16,13 +16,9 @@ class PageDashboard extends Component {
             usersCollection: [],
             sensorsCollection: [],
             measuresCollection: [],
-            usersCollectionSmall: [],
-            usersCollectionMedium: [],
-            usersCollectionBig: []
         }
 
     }
-
     componentDidMount() {
         axios.get('http://localhost:3000/users')
             .then(res => {
@@ -48,34 +44,6 @@ class PageDashboard extends Component {
             .catch(function (error) {
                 alert(error);
             })
-
-
-        axios.get('http://localhost:3000/users/houseSize/small')
-            .then(res => {
-                console.log("response " + res)
-                this.setState({ usersCollectionSmall: res.data });
-            })
-            .catch(function (error) {
-                alert("Sarah" + error);
-            })
-
-        axios.get('http://localhost:3000/users/houseSize/medium')
-            .then(res => {
-                console.log("response " + res)
-                this.setState({ usersCollectionMedium: res.data });
-            })
-            .catch(function (error) {
-                alert("Sarah" + error);
-            })
-
-        axios.get('http://localhost:3000/users/houseSize/big')
-            .then(res => {
-                console.log("response " + res)
-                this.setState({ usersCollectionBig: res.data });
-            })
-            .catch(function (error) {
-                alert("Sarah" + error);
-            })
     }
 
     render() {
@@ -93,13 +61,7 @@ class PageDashboard extends Component {
                         <Col><WidgetChiffre nombre={this.state.measuresCollection.length} couleur='#FFBB28' intitule="Mesures"></WidgetChiffre></Col>
                     </Row>
                     <Row>
-                        <Col lg="5" md="6" sm="12"><WidgetBase
-                            nombreSmall={this.state.usersCollectionSmall.length}
-                            nombreMedium={this.state.usersCollectionMedium.length}
-                            nombreBig={this.state.usersCollectionBig.length}
-                            nomWidget="User's House Size"
-                            chartType="piechart"
-                            collection={this.state.data}></WidgetBase></Col>
+                        <Col lg="5" md="6" sm="12"><WidgetBase nomWidget="User's House Size" chartType="piechart"></WidgetBase></Col>
                         <Col lg="7" md="6" sm="12"><WidgetBase nomWidget="MyBarChart" chartType="barchart"></WidgetBase></Col>
                         <Col lg="4" sm="6"><WidgetBase nomWidget="Type de sensors les plus utilisés" chartType="demipiechart"></WidgetBase></Col>
                     </Row>

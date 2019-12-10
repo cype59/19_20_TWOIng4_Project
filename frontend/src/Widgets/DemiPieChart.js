@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
-    PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend, Tooltip
+    PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip
 } from 'recharts';
 
 import axios from 'axios';
