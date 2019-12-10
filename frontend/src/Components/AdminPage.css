@@ -1,6 +1,24 @@
 .pageAdmin
 {
     background-color: rgba(212, 212, 212, 0.308);
+    overflow: hidden;    
+}
+
+.listeUsers {
+    margin-left: 10%;
+    margin-right: 5%;
+    width: 85%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 576px) {
+    .listeUsers {
+        margin-top: 10px;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
 }
 
 .formulaire
