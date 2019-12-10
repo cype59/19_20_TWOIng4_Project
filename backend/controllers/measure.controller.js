@@ -63,7 +63,7 @@ exports.findOne = (req, res) => {
 
 // Find a single Measure with a type
 exports.findType = (req, res) => {
-  Measure.find({type:req.params.type})
+  Measure.find({ type: req.params.type })
     .then(measure => {
       if (!measure) {
         return res.status(404).send({
@@ -86,7 +86,7 @@ exports.findType = (req, res) => {
 
 // Find a single Measure with a type
 exports.findCreation = (req, res) => {
-  Measure.find({creationDate: { $gte: req.params.creationDate }})
+  Measure.find({ creationDate: { $gte: req.params.creationDate } })
     .then(measure => {
       if (!measure) {
         return res.status(404).send({
@@ -114,9 +114,9 @@ exports.update = (req, res) => {
   Measure.findByIdAndUpdate(
     req.params.measureId,
     {
-        creationDate: req.body.creationDate,
-        sensorId: req.body.sensorId,
-        value: req.body.value,
+      creationDate: req.body.creationDate,
+      sensorId: req.body.sensorId,
+      value: req.body.value,
     },
     { new: true }
   )
@@ -170,15 +170,15 @@ exports.findAvg = (req, res) => {
     {
       $group:
       {
-        _id:'$type',
-        avg: { $avg : '$value' } ,
-        min: { $min : '$value' } ,
-        max: { $max : '$value' } 
+        _id: '$type',
+        avg: { $avg: '$value' },
+        min: { $min: '$value' },
+        max: { $max: '$value' }
       }
     }
-  
-    ]).
-    then(function(result) {
+
+  ]).
+    then(function (result) {
       res.json(result)
     });
 };
@@ -196,3 +196,14 @@ exports.findType = (req, res) => {
     });
 };
 
+
+exports.findMeasureSensorID = (req, res) => {
+  console.log("YES")
+  Measure.find({ type: req.params.type })
+    .populate("sensorID")
+    .exec(function (err, measures) {
+      if (err) return handleError(err);
+      console.log('Array ', measures);
+      res.status(200).json({ measures });
+    })
+};

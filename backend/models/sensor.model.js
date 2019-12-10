@@ -4,7 +4,7 @@ const sensorSchema = new mongoose.Schema(
   {
     creationDate: Date,
     location: String,
-    userId:  {
+    userID:  {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
