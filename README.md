@@ -1,5 +1,6 @@
-LE Sarah
-Pierron Cyril
+# LE Sarah
+# Pierron Cyril
+## OCRES GR 2
 
 Voici notre trello : https://trello.com/b/Qqz0Bg3q/planification-projet-web
 
