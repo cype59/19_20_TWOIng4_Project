@@ -1,9 +1,9 @@
-import React, { Component} from 'react';
-import {Col, Row,Container } from 'reactstrap';
+import React, { Component } from 'react';
+import { Col, Row, Container } from 'reactstrap';
 import "./AdminPage.css";
 import { Table } from 'reactstrap';
 
-import {Card, CardBody,CardTitle} from 'reactstrap';
+import { Card, CardBody, CardTitle } from 'reactstrap';
 import ModalBtn from './ModalBtn';
 import DataTable from './DataTable';
 
@@ -17,36 +17,31 @@ class AdminPage extends Component {
     this.state = {
       usersCollection: []
     }
-}
+  }
 
-componentDidMount() {
+  componentDidMount() {
     axios.get('http://localhost:3000/users')
-        .then(res => {
-          console.log("response "+res)  
-          this.setState({ usersCollection: res.data });
-        })
-        .catch(function (error) {
-            alert("Sarah"+error);
-        })
-}
+      .then(res => {
+        console.log("response " + res)
+        this.setState({ usersCollection: res.data });
+      })
+      .catch(function (error) {
+        alert("Sarah" + error);
+      })
+  }
 
-dataTable() {
+  dataTable() {
     return this.state.usersCollection.map((data, i) => {
-        return <DataTable obj={data} key={i} />;
+      return <DataTable obj={data} key={i} />;
     });
 }
-
   render() {
     return (
       <div className="pageAdmin">
         <Row>
-          <Col></Col>
-          <Col lg="10" className="titreAdmin"><h1>Admin</h1></Col>
-        </Row>
-
-        <Container>
-          <Row>
-            <Col lg="6">
+          <Col>
+            <div className="listeUsers">
+            <h1>Admin</h1>
               <Card>
                 <CardBody>
                   <CardTitle>Liste des utilisateurs</CardTitle>
@@ -61,17 +56,15 @@ dataTable() {
                     </thead>
                     <tbody>
                       {this.dataTable()}
-                     
+
                     </tbody>
-                  </Table>              
-                  <ModalBtn/>                  
+                  </Table>
+                  <ModalBtn />
                 </CardBody>
               </Card>
-            </Col>
-
-        
-          </Row>
-        </Container>
+            </div>
+          </Col>
+        </Row>
       </div>
     );
   }

@@ -60,6 +60,29 @@ exports.findOne = (req, res) => {
     });
 };
 
+// Find a single Sensor with a type
+exports.findLocation = (req, res) => {
+  Sensor.find({location:req.params.location})
+    .then(sensor => {
+      if (!sensor) {
+        return res.status(404).send({
+          message: 'Sensor not found with location ' + req.params.location
+        });
+      }
+      res.send(sensor);
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId') {
+        return res.status(404).send({
+          message: 'Sensor not found with type ' + req.params.location
+        });
+      }
+      return res.status(500).send({
+        message: 'Error retrieving sensor with type ' + req.params.location
+      });
+    });
+};
+
 // Update a sensor identified by the sensorId in the request
 exports.update = (req, res) => {
 
