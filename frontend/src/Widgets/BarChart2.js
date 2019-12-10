@@ -1,13 +1,14 @@
 import React, { PureComponent } from 'react';
 import {
-  ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+  ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
 import axios from 'axios';
 
-export default class MySpiderChart extends PureComponent {
-  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/6ebcxbx4/';
 
+
+export default class MyBarChart extends PureComponent {
+  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/30763kr7/';
 
   constructor(props) {
     super(props);
@@ -51,8 +52,6 @@ export default class MySpiderChart extends PureComponent {
           }
         }
         this.state.averagePollutionBedroom = nbSum/nbTotal;
-        alert("average pollution bedroom: "+this.state.averagePollutionBedroom);
-
       })
       .catch(function (error) {
         alert(error);
@@ -81,8 +80,6 @@ export default class MySpiderChart extends PureComponent {
         }
 
         this.state.averagePollutionBathroom = nbSum/nbTotal;
-        alert("average pollution bathroom: "+ this.state.averagePollutionBathroom);
-
       })
       .catch(function (error) {
         alert(error);
@@ -110,9 +107,7 @@ export default class MySpiderChart extends PureComponent {
            }
          }
  
-         this.state.averagePollutionLivingRoom = nbSum/nbTotal;
-         alert("average pollution living: "+ this.state.averagePollutionLivingRoom);
- 
+         this.state.averagePollutionLivingRoom = nbSum/nbTotal; 
        })
        .catch(function (error) {
          alert(error);
@@ -140,57 +135,45 @@ export default class MySpiderChart extends PureComponent {
            }
          }
  
-         this.state.averagePollutionEntrance = nbSum/nbTotal;
-         alert("average pollution entrance: "+ this.state.averagePollutionEntrance);
- 
+         this.state.averagePollutionEntrance = nbSum/nbTotal; 
        })
        .catch(function (error) {
          alert(error);
        })
-
-
-
-
-
   }
 
-
   render() {
-
-
     const data = [
       {
-        subject: 'Bedroom', A: this.state.averagePollutionBedroom, fullMark: 50,
+        name: this.state.measuresAvg1._id, min: this.state.measuresAvg1.min, moyenne: this.state.measuresAvg1.avg, max: this.state.measuresAvg1.max,
       },
       {
-        subject: 'Bathroom', A: this.state.averagePollutionBathroom, fullMark: 50,
+        name: this.state.measuresAvg2._id, min: this.state.measuresAvg2.min, moyenne: this.state.measuresAvg2.avg, max: this.state.measuresAvg2.max,
       },
       {
-        subject: 'Entrance', A: this.state.averagePollutionEntrance, fullMark: 50,
+        name: this.state.measuresAvg3._id, min: this.state.measuresAvg3.min, moyenne: this.state.measuresAvg3.avg, max: this.state.measuresAvg3.max,
       },
-      {
-        subject: 'Living Room', A: this.state.averagePollutionLivingRoom, fullMark: 50,
-      },
-      /*{
-        subject: 'China', A: 85, fullMark: 150,
-      },
-      {
-        subject: 'Japan', A: 65, fullMark: 150,
-      },*/
+
     ];
 
     return (
 
       <div style={{ width: '100%', height: 300 }}>
         <ResponsiveContainer>
-          <RadarChart width={500} height={500} data={data}>
-            <PolarGrid />
-            <PolarAngleAxis dataKey="subject" />
-            <PolarRadiusAxis />
-            <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-          </RadarChart>
+          <BarChart width={500} height={300} data={data} margin={{ top: 5, right: 30, left: 30, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="min" fill="#FFBB28" />
+            <Bar dataKey="moyenne" fill="#00C49F" />
+            <Bar dataKey="max" fill="#0088FE" />
+          </BarChart>
         </ResponsiveContainer>
       </div>
+
     );
   }
 }
+
