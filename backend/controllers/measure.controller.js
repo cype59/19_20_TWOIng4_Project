@@ -182,3 +182,17 @@ exports.findAvg = (req, res) => {
       res.json(result)
     });
 };
+
+
+exports.findType = (req, res) => {
+  Measure.find({ type: req.params.type })
+    .then(sensors => {
+      res.send(sensors);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};
+

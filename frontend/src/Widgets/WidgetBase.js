@@ -12,9 +12,11 @@ import MoyenneChart from './MoyenneChart'
 
 
 import './widget.css';
+import MyDemiPieChart from './DemiPieChart';
 
 const components = {
     piechart: MyPieChart,
+    demipiechart: MyDemiPieChart,
     linechart: MyLineChart,
     spiderchart: MySpiderChart,
     barchart: MyBarChart,
