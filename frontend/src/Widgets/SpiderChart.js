@@ -3,11 +3,157 @@ import {
   ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
 } from 'recharts';
 
-
+import axios from 'axios';
 
 export default class MySpiderChart extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/6ebcxbx4/';
 
+
+  constructor(props) {
+    super(props);
+    this.state = {
+
+
+      measuresAirPollutionBedroom: [],
+      measuresAirPollutionBathroom: [],
+      measuresAirPollutionLivingRoom: [],
+      measuresAirPollutionEntrance: [],
+      averagePollutionBathroom:0,
+      averagePollutionBedroom:0,
+      averagePollutionLivingRoom:0,
+      averagePollutionEntrance:0,
+
+    }
+
+  }
+
+  componentDidMount() {
+
+    //Moyenne des mesures d'AirPollution dans les chambres
+    axios.get('http://localhost:3000/measures/getSensorDataBedroom')
+      .then(res => {
+        console.log("response " + res)
+        this.setState({ measuresAirPollutionBedroom: res.data });
+
+        var nbTotal=0;
+        var nbSum=0;
+        //var averagePollutionBedroom=0;
+        for (var i = 0; i < this.state.measuresAirPollutionBedroom.sensors.length; i++) 
+        {
+          if(this.state.measuresAirPollutionBedroom.sensors[i].sensorID == null)
+          {
+            
+          }
+          else 
+          {
+            nbTotal++;
+            nbSum+=this.state.measuresAirPollutionBedroom.sensors[i].value;
+          }
+        }
+
+        this.state.averagePollutionBedroom = nbSum/nbTotal;
+        alert("average pollution bedroom: "+this.state.averagePollutionBedroom);
+
+      })
+      .catch(function (error) {
+        alert(error);
+      })
+
+      //Moyenne des mesures d'AirPollution dans les bathroom
+      axios.get('http://localhost:3000/measures/getSensorDataBathroom')
+      .then(res => {
+        console.log("response " + res)
+        this.setState({ measuresAirPollutionBathroom: res.data });
+
+        var nbTotal=0;
+        var nbSum=0;
+        //var averagePollutionBathroom=0;
+        for (var i = 0; i < this.state.measuresAirPollutionBathroom.sensors.length; i++) 
+        {
+          if(this.state.measuresAirPollutionBathroom.sensors[i].sensorID == null)
+          {
+            
+          }
+          else 
+          {
+            nbTotal++;
+            nbSum+=this.state.measuresAirPollutionBathroom.sensors[i].value;
+          }
+        }
+
+        this.state.averagePollutionBathroom = nbSum/nbTotal;
+        alert("average pollution bathroom: "+ this.state.averagePollutionBathroom);
+
+      })
+      .catch(function (error) {
+        alert(error);
+      })
+
+       //Moyenne des mesures d'AirPollution dans les living room
+       axios.get('http://localhost:3000/measures/getSensorDataLivingRoom')
+       .then(res => {
+         console.log("response " + res)
+         this.setState({ measuresAirPollutionLivingRoom: res.data });
+ 
+         var nbTotal=0;
+         var nbSum=0;
+         //var averagePollutionLivingRoom=0;
+         for (var i = 0; i < this.state.measuresAirPollutionLivingRoom.sensors.length; i++) 
+         {
+           if(this.state.measuresAirPollutionLivingRoom.sensors[i].sensorID == null)
+           {
+             
+           }
+           else 
+           {
+             nbTotal++;
+             nbSum+=this.state.measuresAirPollutionLivingRoom.sensors[i].value;
+           }
+         }
+ 
+         this.state.averagePollutionLivingRoom = nbSum/nbTotal;
+         alert("average pollution living: "+ this.state.averagePollutionLivingRoom);
+ 
+       })
+       .catch(function (error) {
+         alert(error);
+       })
+
+       //Moyenne des mesures d'AirPollution dans les living room
+       axios.get('http://localhost:3000/measures/getSensorDataEntrance')
+       .then(res => {
+         console.log("response " + res)
+         this.setState({ measuresAirPollutionEntrance: res.data });
+ 
+         var nbTotal=0;
+         var nbSum=0;
+         //var averagePollutionEntrance=0;
+         for (var i = 0; i < this.state.measuresAirPollutionEntrance.sensors.length; i++) 
+         {
+           if(this.state.measuresAirPollutionEntrance.sensors[i].sensorID == null)
+           {
+             
+           }
+           else 
+           {
+             nbTotal++;
+             nbSum+=this.state.measuresAirPollutionEntrance.sensors[i].value;
+           }
+         }
+ 
+         this.state.averagePollutionEntrance = nbSum/nbTotal;
+         alert("average pollution entrance: "+ this.state.averagePollutionEntrance);
+ 
+       })
+       .catch(function (error) {
+         alert(error);
+       })
+
+
+
+
+
+  }
 
 
   render() {
@@ -15,16 +161,16 @@ export default class MySpiderChart extends PureComponent {
 
     const data = [
       {
-        subject: 'AirPollution', A: 100, fullMark: 150,
+        subject: 'Bedroom', A: this.state.averagePollutionBedroom, fullMark: 50,
       },
       {
-        subject: 'Humidity', A: 100, fullMark: 150,
+        subject: 'Bathroom', A: this.state.averagePollutionBathroom, fullMark: 50,
       },
       {
-        subject: 'Temperature', A: 200, fullMark: 150,
+        subject: 'Entrance', A: this.state.averagePollutionEntrance, fullMark: 50,
       },
       {
-        subject: 'Greece', A: 99, fullMark: 150,
+        subject: 'Living Room', A: this.state.averagePollutionLivingRoom, fullMark: 50,
       },
       /*{
         subject: 'China', A: 85, fullMark: 150,

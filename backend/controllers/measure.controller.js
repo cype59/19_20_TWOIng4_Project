@@ -197,10 +197,68 @@ exports.findType = (req, res) => {
 };
 
 
-exports.findSensorID = (req, res) => {
+/*exports.findSensorID = (req, res) => {
   console.log("YES")
-  Sensor.find({ type: "airPollution" })
-  .populate("userID")
+  Measure.find({ type: "airPollution" })
+  .populate("sensorID")
+  .exec(function (err, sensors) {
+    if (err) return handleError(err);
+    console.log('Array ', sensors);
+    res.status(200).json({sensors});
+  })
+};*/
+
+exports.findSensorIDbedroom = (req, res) => {
+  //console.log("YES")
+  Measure.find({ type: "temperature" })
+  .populate({
+    path: 'sensorID',
+    match: { location: { $eq: "bedroom" }},      
+  })
+  .exec(function (err, sensors) {
+    if (err) return handleError(err);
+    console.log('Array ', sensors);
+    res.status(200).json({sensors});
+  })
+};
+
+
+exports.findSensorIDbathroom = (req, res) => {
+  //console.log("YES")
+  Measure.find({ type: "temperature" })
+  .populate({
+    path: 'sensorID',
+    match: { location: { $eq: "bathroom" }},      
+  })
+  .exec(function (err, sensors) {
+    if (err) return handleError(err);
+    console.log('Array ', sensors);
+    res.status(200).json({sensors});
+  })
+};
+
+
+exports.findSensorIDlivingroom = (req, res) => {
+  //console.log("YES")
+  Measure.find({ type: "temperature" })
+  .populate({
+    path: 'sensorID',
+    match: { location: { $eq: "livingroom" }},      
+  })
+  .exec(function (err, sensors) {
+    if (err) return handleError(err);
+    console.log('Array ', sensors);
+    res.status(200).json({sensors});
+  })
+};
+
+exports.findSensorIDentrance = (req, res) => {
+  //console.log("YES")
+  Measure.find({ type: "temperature" })
+  .populate({
+    path: 'sensorID',
+    match: { location: { $eq: "entrance" }},      
+  })
   .exec(function (err, sensors) {
     if (err) return handleError(err);
     console.log('Array ', sensors);

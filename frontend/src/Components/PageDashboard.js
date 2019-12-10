@@ -102,6 +102,7 @@ class PageDashboard extends Component {
                             collection={this.state.data}></WidgetBase></Col>
                         <Col lg="7" md="6" sm="12"><WidgetBase nomWidget="MyBarChart" chartType="barchart"></WidgetBase></Col>
                         <Col lg="4" sm="6"><WidgetBase nomWidget="Type de sensors les plus utilisés" chartType="demipiechart"></WidgetBase></Col>
+                        <Col lg="4" sm="6"><WidgetBase nomWidget="AirPollution dans différentes pièces" chartType="spiderchart"></WidgetBase></Col>
                     </Row>
                     <Row>
                         <Col lg="4" sm="12"><WidgetBase nomWidget="MyLineChart" chartType="linechart"></WidgetBase></Col>
