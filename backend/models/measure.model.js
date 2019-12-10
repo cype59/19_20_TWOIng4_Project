@@ -4,7 +4,7 @@ const measureSchema = new mongoose.Schema(
   {
     type: String,
     creationDate: String,
-    sensorId:  {
+    sensorID:  {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Sensor'
     },

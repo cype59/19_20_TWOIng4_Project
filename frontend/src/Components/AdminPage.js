@@ -36,9 +36,6 @@ class AdminPage extends Component {
     });
   }
 
-
-
-
   render() {
     return (
       <div className="pageAdmin">
