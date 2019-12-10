@@ -163,19 +163,26 @@ exports.delete = (req, res) => {
     });
 };
 
+
 exports.findAvg = (req, res) => {
   Measure.aggregate([
+
     {
       $group:
       {
         _id:'$type',
-        avg:{$avg:'$value'}
+        avg: { $avg : '$value' } ,
+        min: { $min : '$value' } ,
+        max: { $max : '$value' } 
       }
     }
-  ]).then(function(result){
-    res.json(result)
-  });
+  
+    ]).
+    then(function(result) {
+      res.json(result)
+    });
 };
+
 
 exports.findType = (req, res) => {
   Measure.find({ type: req.params.type })
