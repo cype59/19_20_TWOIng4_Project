@@ -7,6 +7,8 @@ import MyLineChart from './LineChart';
 import MyPieChart from './PieChart';
 import MySpiderChart from './SpiderChart';
 import MyBarChart from './BarChart';
+import MyBarChart2 from './BarChart2';
+
 import MapChart from './MapChart';
 import MoyenneChart from './MoyenneChart'
 
@@ -20,6 +22,7 @@ const components = {
     linechart: MyLineChart,
     spiderchart: MySpiderChart,
     barchart: MyBarChart,
+    barchart2: MyBarChart2,
     mapchart: MapChart,
     moyennechart: MoyenneChart
 };

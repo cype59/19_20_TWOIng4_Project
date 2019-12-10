@@ -51,7 +51,6 @@ export default class MySpiderChart extends PureComponent {
           }
         }
         this.state.averagePollutionBedroom = nbSum/nbTotal;
-        alert("average pollution bedroom: "+this.state.averagePollutionBedroom);
 
       })
       .catch(function (error) {
@@ -81,7 +80,6 @@ export default class MySpiderChart extends PureComponent {
         }
 
         this.state.averagePollutionBathroom = nbSum/nbTotal;
-        alert("average pollution bathroom: "+ this.state.averagePollutionBathroom);
 
       })
       .catch(function (error) {
@@ -111,7 +109,6 @@ export default class MySpiderChart extends PureComponent {
          }
  
          this.state.averagePollutionLivingRoom = nbSum/nbTotal;
-         alert("average pollution living: "+ this.state.averagePollutionLivingRoom);
  
        })
        .catch(function (error) {
@@ -141,11 +138,19 @@ export default class MySpiderChart extends PureComponent {
          }
  
          this.state.averagePollutionEntrance = nbSum/nbTotal;
-         alert("average pollution entrance: "+ this.state.averagePollutionEntrance);
  
        })
        .catch(function (error) {
          alert(error);
+       })
+
+       axios.get('http://localhost:3000/measures/getSensorDataLivingRoom')
+       .then(res => {
+           this.setState({ measuresAirPollutionLivingRoom: res.data });
+
+       })
+       .catch(function (error) {
+           alert(error);
        })
 
 

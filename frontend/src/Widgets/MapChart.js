@@ -36,6 +36,7 @@ export default class MapChart extends PureComponent {
       usersChina: [],
       usersUs: [],
       usersCanada: [],
+      usersCongo: [],
     }
 
   }
@@ -95,6 +96,9 @@ export default class MapChart extends PureComponent {
           if (this.state.users[i]._id === 'united states') {
             this.setState({ usersUs: res.data[i] });
           }
+          if (this.state.users[i]._id === 'congo') {
+            this.setState({ usersCongo: res.data[i] });
+          }
         }
 
       })
@@ -119,6 +123,7 @@ export default class MapChart extends PureComponent {
       MA: this.state.usersMorocco.sum,
       CA: this.state.usersCanada.sum,
       US: this.state.usersUs.sum,
+      CD: this.state.usersCongo.sum,
     };
     return (
       <div>
