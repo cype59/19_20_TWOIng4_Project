@@ -1,9 +1,27 @@
 LE Sarah
+
 Pierron Cyril
 
+OCRES GROUPE 2
+
 Voici notre trello : https://trello.com/b/Qqz0Bg3q/planification-projet-web
-Pour intialiser le projet : 
-faire npm install dans le backend et dans le frontend
+
+## Initialiser le projet 
+
+**Sur un prermier terminal faire**
+```shell
+$ cd backend
+$ npm install
+$ npm start
+```
+ATTENTION : le backend doit tourner sur localhost:3000
+
+**Sur un second terminal faire**
+```shell
+$ cd frontend
+$ npm install
+$ npm start
+```
 
 
 # Projet de fin de semestre

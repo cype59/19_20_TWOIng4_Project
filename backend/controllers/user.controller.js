@@ -130,3 +130,22 @@ exports.findHouseSize = (req, res) => {
       });
     });
 };
+
+
+exports.findCountry = (req, res) => {
+  User.aggregate([
+
+    {
+      $group:
+      {
+        _id: '$location',
+        sum: { $sum: '$personsInHouse' },
+        
+      }      
+    }
+
+  ]).
+    then(function (result) {
+      res.json(result)
+    });
+};

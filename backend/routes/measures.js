@@ -12,6 +12,9 @@ router.get('/type/:type', measure.findType);
 router.get('/date/:creationDate', measure.findCreation);
 //router.get('/sensorID/:sensorID', measure.findSensorID);
 
+router.get('/type/a/:type',measure.findMeasureSensorID);
+
+
 router.get("/getAvg", measure.findAvg);
 
 module.exports = router;

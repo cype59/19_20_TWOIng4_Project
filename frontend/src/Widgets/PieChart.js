@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import {
-  PieChart, Pie, ResponsiveContainer, Cell,Legend,
+  PieChart, Pie, ResponsiveContainer, Cell, Legend,
 } from 'recharts';
 
-
+import axios from 'axios';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -25,13 +25,50 @@ const renderCustomizedLabel = ({
 
 export default class MyPieChart extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/c9pL8k61/';
-  
-  render() {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      usersCollectionSmall: [],
+      usersCollectionMedium: [],
+      usersCollectionBig: [],
+    }
+
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:3000/users/houseSize/small')
+      .then(res => {
+        console.log("response " + res)
+        this.setState({ usersCollectionSmall: res.data });
+      })
+      .catch(function (error) {
+        alert("Sarah" + error);
+      })
+
+    axios.get('http://localhost:3000/users/houseSize/medium')
+      .then(res => {
+        console.log("response " + res)
+        this.setState({ usersCollectionMedium: res.data });
+      })
+      .catch(function (error) {
+        alert("Sarah" + error);
+      })
+
+    axios.get('http://localhost:3000/users/houseSize/big')
+      .then(res => {
+        console.log("response " + res)
+        this.setState({ usersCollectionBig: res.data });
+      })
+      .catch(function (error) {
+        alert("Sarah" + error);
+      })
+  }
+  render() {
     const data = [
-      { name: 'Small houses', value: this.props.nombreSmall },
-      { name: 'Medium houses', value: this.props.nombreMedium },
-      { name: 'Big Houses', value: this.props.nombreBig },
+      { name: 'Small houses', value: this.state.usersCollectionSmall.length },
+      { name: 'Medium houses', value: this.state.usersCollectionMedium.length },
+      { name: 'Big Houses', value: this.state.usersCollectionBig.length },
     ];
     return (
       <div style={{ width: '100%', height: 300 }}>
@@ -49,7 +86,7 @@ export default class MyPieChart extends PureComponent {
                 data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
               }
             </Pie>
-<Legend/>
+            <Legend />
           </PieChart>
         </ResponsiveContainer>
       </div>
