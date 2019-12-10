@@ -47,6 +47,7 @@ export default class MyDemiPieChart extends PureComponent {
             .then(res => {
                 console.log("response " + res)
                 this.setState({ measuresCollectionAirPollution: res.data });
+                //alert(this.state.measuresCollectionAirPollution[0].value);
             })
             .catch(function (error) {
                 alert(error);

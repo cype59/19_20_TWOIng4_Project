@@ -64,6 +64,7 @@ class PageDashboard extends Component {
                         <Col lg="5" md="6" sm="12"><WidgetBase nomWidget="Taille des maisons" chartType="piechart"></WidgetBase></Col>
                         <Col lg="7" md="6" sm="12"><WidgetBase nomWidget="Données importantes sur les mesures" chartType="barchart"></WidgetBase></Col>
                         <Col lg="4" sm="6"><WidgetBase nomWidget="Type de capteurs les plus utilisés" chartType="demipiechart"></WidgetBase></Col>
+                        <Col lg="4" sm="6"><WidgetBase nomWidget="AirPollution dans différentes pièces" chartType="spiderchart"></WidgetBase></Col>
                         <Col lg="12"><WidgetBase nomWidget="Répartition des personnes par pays" chartType="mapchart"></WidgetBase></Col>
                     </Row>
                 </div>

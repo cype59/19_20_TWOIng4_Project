@@ -9,7 +9,9 @@ const sensorSchema = new mongoose.Schema(
         ref: 'User'
     },
   },{
-    versionKey: false // You should be aware of the outcome after set to false
+    
+    versionKey: false, // You should be aware of the outcome after set to false
+    //collection: "Sensor"
 });
 
 module.exports = mongoose.model('Sensor', sensorSchema);
