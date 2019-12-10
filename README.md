@@ -2,6 +2,8 @@ LE Sarah
 Pierron Cyril
 
 Voici notre trello : https://trello.com/b/Qqz0Bg3q/planification-projet-web
+Pour intialiser le projet : 
+faire npm install dans le backend et dans le frontend
 
 
 # Projet de fin de semestre
