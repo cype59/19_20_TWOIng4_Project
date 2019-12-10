@@ -196,3 +196,15 @@ exports.findType = (req, res) => {
     });
 };
 
+
+exports.findSensorID = (req, res) => {
+  console.log("YES")
+  Sensor.find({ type: "airPollution" })
+  .populate("userID")
+  .exec(function (err, sensors) {
+    if (err) return handleError(err);
+    console.log('Array ', sensors);
+    res.status(200).json({sensors});
+  })
+};
+

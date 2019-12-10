@@ -154,14 +154,14 @@ exports.findSensorType = (req, res) => {
 
 
   exports.findSensorUserID = (req, res) => {
+    console.log("YES")
     Sensor.find({ location: "bedroom" })
     .populate("userID")
-    .exec(function (err, stories) {
+    .exec(function (err, sensors) {
       if (err) return handleError(err);
-      console.log('The userID are an array: ', stories);
-    }).then(function(result){
-      res.json(result)
-    });
+      console.log('Array ', sensors);
+      res.status(200).json({sensors});
+    })
   };
 
   
