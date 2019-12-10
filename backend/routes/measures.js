@@ -15,6 +15,9 @@ router.get('/getSensorDataBathroom', measure.findSensorIDbathroom);
 router.get('/getSensorDataLivingRoom', measure.findSensorIDlivingroom);
 router.get('/getSensorDataEntrance', measure.findSensorIDentrance);
 
+router.get('/type/a/:type',measure.findMeasureSensorID);
+
+
 router.get("/getAvg", measure.findAvg);
 
 module.exports = router;

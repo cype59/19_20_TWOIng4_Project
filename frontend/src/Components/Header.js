@@ -12,14 +12,6 @@ class Header extends Component {
                 <Row>
                     <img src={logo} alt='logo' id="logo"></img>
                 </Row>
-
-                <Row>
-                    <ButtonGroup>
-                        <Button>Today</Button>
-                        <Button>Month</Button>
-                        <Button>Year</Button>
-                    </ButtonGroup>                    
-                </Row>
             </div>
         );
     }

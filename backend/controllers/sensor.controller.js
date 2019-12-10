@@ -152,7 +152,6 @@ exports.findSensorType = (req, res) => {
     });
 };
 
-
   exports.findSensorUserID = (req, res) => {
     console.log("YES")
     Sensor.find({ location: "bedroom" })
@@ -164,6 +163,5 @@ exports.findSensorType = (req, res) => {
     })
   };
 
-  
-  
+
 
