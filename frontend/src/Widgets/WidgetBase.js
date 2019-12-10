@@ -7,7 +7,9 @@ import MyLineChart from './LineChart';
 import MyPieChart from './PieChart';
 import MySpiderChart from './SpiderChart';
 import MyBarChart from './BarChart';
-import MapChart from './MapChart'
+import MapChart from './MapChart';
+import MoyenneChart from './MoyenneChart'
+
 
 import './widget.css';
 
@@ -17,6 +19,7 @@ const components = {
     spiderchart: MySpiderChart,
     barchart: MyBarChart,
     mapchart: MapChart,
+    moyennechart: MoyenneChart
 };
 
 class WidgetBase extends React.Component {
