@@ -162,3 +162,30 @@ exports.delete = (req, res) => {
       });
     });
 };
+
+exports.findAvg = (req, res) => {
+  Measure.aggregate([
+    {
+      $group:
+      {
+        _id:'$type',
+        avg:{$avg:'$value'}
+      }
+    }
+  ]).then(function(result){
+    res.json(result)
+  });
+};
+
+exports.findType = (req, res) => {
+  Measure.find({ type: req.params.type })
+    .then(sensors => {
+      res.send(sensors);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};
+
