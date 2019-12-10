@@ -116,3 +116,17 @@ exports.delete = (req, res) => {
       });
     });
 };
+
+exports.findAvg = (req, res) => {
+  Measure.aggregate([
+    {
+      $group:
+      {
+        _id:'$type',
+        avg:{$avg:'$value'}
+      }
+    }
+  ]).then(function(result){
+    res.json(result)
+  });
+};

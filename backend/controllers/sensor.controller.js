@@ -114,3 +114,31 @@ exports.delete = (req, res) => {
       });
     });
 };
+
+
+//AJout sarah
+exports.findSensorType = (req, res) => {
+  Sensor.find({location: req.params.location})
+    .then(sensors => {
+      res.send(sensors);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving sensors.'
+      });
+    });
+};
+
+
+  exports.findSensorUserID = (req, res) => {
+    Sensor.find({ location: "bedroom" })
+    .populate("userID")
+    .exec(function (err, stories) {
+      if (err) return handleError(err);
+      console.log('The userID are an array: ', stories);
+    }).then(function(result){
+      res.json(result)
+    });
+  };
+  
+
