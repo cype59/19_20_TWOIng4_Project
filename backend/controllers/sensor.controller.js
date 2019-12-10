@@ -140,5 +140,7 @@ exports.findSensorType = (req, res) => {
       res.json(result)
     });
   };
+
+  
   
 

@@ -95,7 +95,7 @@ class PageDashboard extends Component {
                     </Row>
                     <Row>
                         <Col lg="4" sm="6"><WidgetBase  nomWidget="MyBarChart" chartType="barchart"></WidgetBase></Col>
-                        <Col lg="4" sm="6"><WidgetBase nomWidget="MySpiderChart" chartType="spiderchart"></WidgetBase></Col>
+                        <Col lg="4" sm="6"><WidgetBase nomWidget="Type de sensors les plus utilisés" chartType="demipiechart"></WidgetBase></Col>
                         <Col lg="4" sm="12"><WidgetBase nomWidget="MyLineChart" chartType="linechart"></WidgetBase></Col>
                     </Row>
                     <Row>
