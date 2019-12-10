@@ -34,8 +34,7 @@ class AdminPage extends Component {
     return this.state.usersCollection.map((data, i) => {
       return <DataTable obj={data} key={i} />;
     });
-  }
-
+}
   render() {
     return (
       <div className="pageAdmin">
