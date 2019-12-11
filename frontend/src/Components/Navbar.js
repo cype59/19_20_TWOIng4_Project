@@ -11,7 +11,7 @@ const StyledMenu = styled.nav`
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-60%)'};
   opacity: ${({open}) => open ? '0.8': '1'};
   background: #1a1a1a;
-  height: 250vh;
+  height: 259vh;
   text-align: right;
   padding-top : 50px;
   position: absolute;
