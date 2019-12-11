@@ -61,11 +61,11 @@ class PageDashboard extends Component {
                         <Col><WidgetChiffre nombre={this.state.measuresCollection.length} couleur='#FFBB28' intitule="Mesures"></WidgetChiffre></Col>
                     </Row>
                     <Row>
-                        <Col lg="5" md="6" sm="12"><WidgetBase nomWidget="Taille des maisons" chartType="piechart"></WidgetBase></Col>
-                        <Col lg="7" md="6" sm="12"><WidgetBase nomWidget="Données importantes sur les mesures" chartType="barchart"></WidgetBase></Col>
-                        <Col lg="7" sm="6"><WidgetBase nomWidget="AirPollution dans différentes pièces" chartType="barchart2"></WidgetBase></Col>
-                        <Col lg="5" sm="6"><WidgetBase nomWidget="Type de capteurs les plus utilisés" chartType="demipiechart"></WidgetBase></Col>
-                        <Col lg="12"><WidgetBase nomWidget="Répartition des personnes par pays" chartType="mapchart"></WidgetBase></Col>
+                        <Col lg="5" md="6" sm="12"><WidgetBase nomWidget="Taille de maisons des utilisateurs" chartType="piechart"></WidgetBase></Col>
+                        <Col lg="7" md="6" sm="12"><WidgetBase nomWidget="Données sur les différents types de mesures" chartType="barchart"></WidgetBase></Col>
+                        <Col lg="7" sm="6"><WidgetBase nomWidget="Température moyenne de différentes pièces des utilisateurs (en °C)" chartType="barchart2"></WidgetBase></Col>
+                        <Col lg="5" sm="6"><WidgetBase nomWidget="Chiffres sur les différents capteurs" chartType="demipiechart"></WidgetBase></Col>
+                        <Col lg="12"><WidgetBase nomWidget="Répartition des utilisateurs par pays" chartType="mapchart"></WidgetBase></Col>
                     </Row>
                 </div>
 

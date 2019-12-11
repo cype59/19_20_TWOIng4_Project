@@ -58,9 +58,9 @@ export default class MyDemiPieChart extends PureComponent {
     render() {
 
         const data = [
-            { name: 'Air pollution sensor', value: this.state.measuresCollectionAirPollution.length },
-            { name: 'Humidity sensor', value: this.state.measuresCollectionHumidity.length },
-            { name: 'Temperature sensor', value: this.state.measuresCollectionTemperature.length },
+            { name: "Nombre total de capteurs de pollution d'air", value: this.state.measuresCollectionAirPollution.length },
+            { name: "Nombre total de capteurs d'humidité", value: this.state.measuresCollectionHumidity.length },
+            { name: 'Nombre total de capteurs température', value: this.state.measuresCollectionTemperature.length },
             
         ];
 

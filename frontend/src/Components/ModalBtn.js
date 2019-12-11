@@ -109,7 +109,7 @@ class ModalBtn extends Component {
         return (
             <div>
                 <Row>
-                    <Col lg="6"><Button color="info" onClick={this.toggle}>Ajouter un utilisateur</Button></Col>
+                    <Col ><Button color="info" onClick={this.toggle}>Ajouter un utilisateur</Button></Col>
                 </Row>
                 <Modal isOpen={this.state.modal} show={this.state.show} onHide={this.handleClose} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Ajouter un utilisateur</ModalHeader>

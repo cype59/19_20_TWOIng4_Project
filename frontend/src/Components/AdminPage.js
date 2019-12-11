@@ -41,7 +41,7 @@ class AdminPage extends Component {
         <Row>
           <Col>
             <div className="listeUsers">
-            <h1>Admin</h1>
+            <h1>Administrateur</h1>
               <Card>
                 <CardBody>
                   <CardTitle>Liste des utilisateurs</CardTitle>
