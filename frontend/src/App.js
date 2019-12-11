@@ -1,12 +1,13 @@
 import React from 'react';
 import Routes from './routes';
 import Navbar from './Components/Navbar';
+import './App.css';
 
 
 
 function App() {
   return (
-  <div>
+  <div className="App">
     <Navbar></Navbar>
     <Routes/>
   </div>

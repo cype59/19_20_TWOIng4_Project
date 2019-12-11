@@ -34,13 +34,13 @@ Les 8 widgets que l'on propose sont réutilisables.
 
 Le dashboard et la page Admin sont entièrement responsive.
 
-Concernant le backend, tous les points du cachier des charges sont fonctionels.
+Concernant le backend, tous les points du cahier des charges sont fonctionels.
 
 
 ## BONUS
 
 Nous tenons à exposer quelques bonus : 
-Tout d'abord, nous avons, pour un Widget, réalisé une "requête" faisant appel à 2 collections afin d'avoir des données plus intéréssantes.
+Tout d'abord, nous avons, pour un Widget, réalisé une "requête" faisant appel à 2 collections afin d'avoir des données plus intéréssantes (utilisation de populate()).
 
 Ensuite, nous avons réalisé un widget affichant une carte du monde. Dans le cadre de ce projet (et par manque de temps), tous les pays n'ont pas été implémenté mais dans l'idée, cela aurait été totalement possible.
 Ainsi, y est présent les pays déjà présents dans la BDD ainsi que quelques autres pays : (united states, congo, canada).
